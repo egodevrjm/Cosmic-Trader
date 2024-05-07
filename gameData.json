@@ -1,0 +1,458 @@
+{
+  "planets": [
+    {
+      "name": "Home Base",
+      "description": "Your central hub for space trading and adventure.",
+      "image": "images/home-base.png",
+      "x": 0,
+      "y": 0,
+      "isAccessible": true,
+      "goods": [
+        {
+          "name": "Repair Kits",
+          "basePrice": 50,
+          "currentPrice": 50,
+          "volatility": 0.1
+        },
+        {
+          "name": "Upgrade Parts",
+          "basePrice": 100,
+          "currentPrice": 100,
+          "volatility": 0.2
+        }
+      ],
+      "events": [
+        {
+          "type": "shipUpgrade",
+          "description": "A ship upgrade event occurs, offering discounts on ship upgrades.",
+          "effectOnPrices": 0.8,
+          "probability": 0.1
+        },
+        {
+          "type": "pirateAttack",
+          "description": "Pirates attack your ship and steal your credits.",
+          "effectOnCargo": "credits",
+          "probability": 0.05
+        },
+        {
+          "type": "marketBoom",
+          "description": "A market boom increases the prices of goods at Home Base.",
+          "effectOnPrices": 1.2,
+          "probability": 0.08
+        }
+      ]
+    },
+    {
+      "name": "Zyther",
+      "description": "A bustling trade hub known for its rich mineral deposits.",
+      "image": "images/zyther.png",
+      "x": 100,
+      "y": 200,
+      "isAccessible": true,
+      "goods": [
+        {
+          "name": "Zytherian Steel",
+          "basePrice": 150,
+          "currentPrice": 150,
+          "volatility": 0.1
+        },
+        {
+          "name": "Quantum Chips",
+          "basePrice": 300,
+          "currentPrice": 280,
+          "volatility": 0.2
+        }
+      ],
+      "events": [
+        {
+          "type": "marketBoom",
+          "description": "A market boom increases the prices of goods on Zyther.",
+          "effectOnPrices": 1.2,
+          "probability": 0.05
+        },
+        {
+          "type": "pirateAttack",
+          "description": "Pirates attack your ship and steal your fuel.",
+          "effectOnCargo": "fuel",
+          "probability": 0.1
+        },
+        {
+          "type": "mineralRush",
+          "description": "A mineral rush increases the demand for Zytherian Steel.",
+          "effectOnDemand": {
+            "Zytherian Steel": 1.5
+          },
+          "probability": 0.08
+        }
+      ]
+    },
+    {
+      "name": "Aquilae",
+      "description": "Known for its advanced technology and sophisticated AI research.",
+      "image": "images/aquilae.png",
+      "x": 400,
+      "y": 300,
+      "isAccessible": true,
+      "goods": [
+        {
+          "name": "Aquilae Software",
+          "basePrice": 500,
+          "currentPrice": 500,
+          "volatility": 0.15
+        },
+        {
+          "name": "Biochips",
+          "basePrice": 450,
+          "currentPrice": 420,
+          "volatility": 0.25
+        }
+      ],
+      "events": [
+        {
+          "type": "technologicalAdvancement",
+          "description": "Technological advancements reduce the prices of tech goods on Aquilae.",
+          "effectOnPrices": 0.8,
+          "probability": 0.07
+        },
+        {
+          "type": "diplomaticEvent",
+          "description": "Diplomatic events increase the prices of all goods on Aquilae.",
+          "effectOnPrices": 1.5,
+          "probability": 0.03
+        },
+        {
+          "type": "aiBreakthrough",
+          "description": "An AI breakthrough increases the demand for Biochips.",
+          "effectOnDemand": {
+            "Biochips": 1.8
+          },
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "name": "Nebula",
+      "description": "A mysterious planet shrouded in a dense nebula.",
+      "image": "images/nebula.png",
+      "x": 300,
+      "y": 100,
+      "isAccessible": true,
+      "goods": [
+        {
+          "name": "Nebula Gas",
+          "basePrice": 200,
+          "currentPrice": 200,
+          "volatility": 0.1
+        },
+        {
+          "name": "Nebula Crystals",
+          "basePrice": 250,
+          "currentPrice": 230,
+          "volatility": 0.2
+        }
+      ],
+      "events": [
+        {
+          "type": "spaceStorm",
+          "description": "A space storm damages your ship's hull.",
+          "effectOnShip": "damage",
+          "probability": 0.1
+        },
+        {
+          "type": "marketCrash",
+          "description": "A market crash reduces the prices of all goods on Nebula.",
+          "effectOnPrices": 0.5,
+          "probability": 0.05
+        },
+        {
+          "type": "mysteriousSignal",
+          "description": "A mysterious signal leads to the discovery of rare nebula artifacts.",
+          "effectOnInventory": {
+            "Nebula Artifacts": 5
+          },
+          "probability": 0.02
+        }
+      ]
+    },
+    {
+      "name": "Solaris",
+      "description": "A scorching hot planet with valuable solar energy resources.",
+      "image": "images/solaris.png",
+      "x": 500,
+      "y": 400,
+      "isAccessible": false,
+      "goods": [
+        {
+          "name": "Solar Panels",
+          "basePrice": 400,
+          "currentPrice": 400,
+          "volatility": 0.12
+        },
+        {
+          "name": "Thermal Regulators",
+          "basePrice": 350,
+          "currentPrice": 380,
+          "volatility": 0.18
+        }
+      ],
+      "events": [
+        {
+          "type": "solarFlare",
+          "description": "A solar flare disrupts electronic systems and increases the demand for Thermal Regulators.",
+          "effectOnDemand": {
+            "Thermal Regulators": 1.6
+          },
+          "probability": 0.09
+        },
+        {
+          "type": "heatWave",
+          "description": "A heat wave reduces the efficiency of Solar Panels, increasing their prices.",
+          "effectOnPrices": {
+            "Solar Panels": 1.3
+          },
+          "probability": 0.06
+        }
+      ]
+    },
+    {
+      "name": "Glacius",
+      "description": "An icy planet with valuable cryogenic resources.",
+      "image": "images/glacius.png",
+      "x": 200,
+      "y": 500,
+      "isAccessible": false,
+      "goods": [
+        {
+          "name": "Cryogenic Fluid",
+          "basePrice": 300,
+          "currentPrice": 320,
+          "volatility": 0.15
+        },
+        {
+          "name": "Cold Fusion Reactors",
+          "basePrice": 550,
+          "currentPrice": 600,
+          "volatility": 0.22
+        }
+      ],
+      "events": [
+        {
+          "type": "blizzard",
+          "description": "A blizzard halts mining operations, reducing the supply of Cryogenic Fluid.",
+          "effectOnPrices": {
+            "Cryogenic Fluid": 1.4
+          },
+          "probability": 0.08
+        },
+        {
+          "type": "iceMelting",
+          "description": "Ice melting reveals new deposits of cryogenic resources, increasing the supply.",
+          "effectOnPrices": {
+            "Cryogenic Fluid": 0.8,
+            "Cold Fusion Reactors": 0.9
+          },
+          "probability": 0.04
+        }
+      ]
+    }
+  ],
+  "ships": [
+    {
+      "id": "ship1",
+      "type": "Starter Vessel",
+      "fuelCapacity": 100,
+      "fuelCurrent": 100,
+      "cargoCapacity": 50,
+      "cargoLoad": [],
+      "credits": 1000,
+      "upgrades": {
+        "engine": "basic engine",
+        "cargoHold": "small cargo hold",
+        "defenseSystem": "basic shields"
+      }
+    }
+  ],
+  "availableShips": [
+    {
+      "id": "ship2",
+      "type": "Advanced Trader",
+      "basePrice": 5000,
+      "fuelCapacity": 200,
+      "cargoCapacity": 100,
+      "baseUpgrades": {
+        "engine": "advanced engine",
+        "cargoHold": "medium cargo hold",
+        "defenseSystem": "advanced shields"
+      },
+      "additionalUpgrades": [
+        {
+          "name": "fuel efficiency boost",
+          "effect": "fuelCapacity",
+          "value": 1.2,
+          "price": 2000
+        },
+        {
+          "name": "cargo expansion",
+          "effect": "cargoCapacity",
+          "value": 1.5,
+          "price": 3000
+        }
+      ]
+    },
+    {
+      "id": "ship3",
+      "type": "Ultimate Freighter",
+      "basePrice": 10000,
+      "fuelCapacity": 300,
+      "cargoCapacity": 150,
+      "baseUpgrades": {
+        "engine": "high-performance engine",
+        "cargoHold": "large cargo hold",
+        "defenseSystem": "military-grade shields"
+      },
+      "additionalUpgrades": [
+        {
+          "name": "advanced navigation system",
+          "effect": "fuelEfficiency",
+          "value": 0.8,
+          "price": 4000
+        },
+        {
+          "name": "reinforced hull",
+          "effect": "hullStrength",
+          "value": 1.5,
+          "price": 5000
+        }
+      ]
+    },
+    {
+      "id": "ship4",
+      "type": "Stealth Cruiser",
+      "basePrice": 15000,
+      "fuelCapacity": 150,
+      "cargoCapacity": 75,
+      "baseUpgrades": {
+        "engine": "stealth engine",
+        "cargoHold": "stealth cargo hold",
+        "defenseSystem": "cloak generator"
+      },
+      "additionalUpgrades": [
+        {
+          "name": "improved cloaking device",
+          "effect": "stealthDuration",
+          "value": 2,
+          "price": 6000
+        },
+        {
+          "name": "advanced weapon system",
+          "effect": "firepower",
+          "value": 1.8,
+          "price": 7000
+        }
+      ]
+    },
+    {
+      "id": "ship5",
+      "type": "Explorer Vessel",
+      "basePrice": 20000,
+      "fuelCapacity": 250,
+      "cargoCapacity": 100,
+      "baseUpgrades": {
+        "engine": "exploration engine",
+        "cargoHold": "exploration cargo hold",
+        "defenseSystem": "exploration shields"
+      },
+      "additionalUpgrades": [
+        {
+          "name": "advanced sensor array",
+          "effect": "sensorRange",
+          "value": 1.5,
+          "price": 8000
+        },
+        {
+          "name": "long-range communication system",
+          "effect": "communicationRange",
+          "value": 1.5,
+          "price": 9000
+        }
+      ]
+    }
+  ],
+  "coreCommodities": [
+    {
+      "name": "Fuel",
+      "basePrice": 50,
+      "currentPrice": 50,
+      "volatility": 0.1
+    },
+    {
+      "name": "Food",
+      "basePrice": 30,
+      "currentPrice": 30,
+      "volatility": 0.05
+    },
+    {
+      "name": "Water",
+      "basePrice": 20,
+      "currentPrice": 20,
+      "volatility": 0.03
+    },
+    {
+      "name": "Medicine",
+      "basePrice": 100,
+      "currentPrice": 100,
+      "volatility": 0.15
+    },
+    {
+      "name": "Luxury Goods",
+      "basePrice": 200,
+      "currentPrice": 200,
+      "volatility": 0.2
+    },
+    {
+      "name": "Machinery",
+      "basePrice": 150,
+      "currentPrice": 150,
+      "volatility": 0.1
+    },
+    {
+      "name": "Textiles",
+      "basePrice": 80,
+      "currentPrice": 80,
+      "volatility": 0.07
+    },
+    {
+      "name": "Electronics",
+      "basePrice": 250,
+      "currentPrice": 250,
+      "volatility": 0.25
+    },  
+    {
+      "name": "Weapons",
+      "basePrice": 300,
+      "currentPrice": 300,
+      "volatility": 0.3
+    },
+    {
+      "name": "Minerals",
+      "basePrice": 70,
+      "currentPrice": 70,
+      "volatility": 0.08
+    },
+    {
+      "name": "Gems",
+      "basePrice": 120,
+      "currentPrice": 120,
+      "volatility": 0.12
+    },
+    {
+      "name": "Art",
+      "basePrice": 400,
+      "currentPrice": 400,
+      "volatility": 0.3
+    }
+  ],
+  "market": {
+    "priceAdjustmentFactor": 0.05
+  }
+}

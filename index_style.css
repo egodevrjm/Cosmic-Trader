@@ -1,0 +1,136 @@
+body {
+    background: linear-gradient(135deg, #000000, #1a0033, #00001a, #001a1a, #1a1a00, #000000);
+    background-size: 600% 600%;
+    animation: gradientAnimation 20s ease infinite;
+    color: #fff;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand .logo {
+    height: 50px;
+}
+
+.hero {
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    margin-right: 20px;
+}
+
+.features {
+    padding: 80px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature i {
+    font-size: 48px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.feature h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about {
+    padding: 80px 0;
+}
+
+.about h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact {
+    padding: 80px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.contact-info li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: #ffd700;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #000;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+.social-media {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.social-media li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.social-media li a {
+    color: #fff;
+    font-size: 24px;
+}
